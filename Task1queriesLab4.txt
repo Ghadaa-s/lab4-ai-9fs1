@@ -1,0 +1,42 @@
+1 ?- house = house.
+true.
+Same word on both sides, so they match.
+
+2 ?- house = abc.
+false.
+Different words, so they don't match.
+
+3 ?- edge(a,b) = edge(C,b).
+C = a.
+C becomes a.
+
+4 ?- edge(a,d) = edge(C,B).
+C = a,
+B = d.
+C becomes a and B becomes d.
+
+5 ?- edge(C,B) = edge(a,d).
+C = a,
+B = d.
+Same as 4, just flipped.
+
+6 ?- edge(A,f(g,h)) = edge(a,B).
+A = a,
+B = f(g, h).
+A becomes a and B becomes f(g,h).
+
+7 ?- edge(A,A) = edge(b,c).
+false.
+A can't be b and c at the same time.
+
+8 ?- edge(A,A) = edge(b,b).
+A = b.
+Both are b, so A = b.
+
+9 ?- A = B, B = f.
+A = B, B = f.
+A and B are the same, so both become f.
+
+10 ?- A = B, B = f, A = e.
+false.
+A is already f, so it can't be e.
